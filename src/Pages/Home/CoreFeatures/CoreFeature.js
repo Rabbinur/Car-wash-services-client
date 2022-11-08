@@ -8,7 +8,7 @@ import img5 from "../../../assets/icons/person.svg";
 import img6 from "../../../assets/icons/Wrench.svg";
 const CoreFeature = () => {
   return (
-    <div>
+    <div className="mt-20 mb-20">
       <div className="text-center mb-12">
         <p className="text-2xl font-bold  text-orange-600 mb-5">
           {" "}

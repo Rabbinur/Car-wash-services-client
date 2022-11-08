@@ -6,7 +6,7 @@ import image4 from "../../../assets/images/testomonial/img4.png";
 import image5 from "../../../assets/icons/quote.svg";
 const Testomonial = () => {
   return (
-    <div className="mt-12">
+    <div className="mt-36 mb-32">
       <div className="text-center mb-12">
         <p className="text-2xl font-bold  text-orange-600 mb-5"> Testimonial</p>
         <h2 className="text-5xl font-semibold mb-5">What Customer Says</h2>
