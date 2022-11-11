@@ -1,4 +1,5 @@
 import React from "react";
+import useTitle from "../../../Hooks/UseTitle";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
 import Contact from "../Contact/Contact";
@@ -9,6 +10,7 @@ import Team from "../Team/Team";
 import Testomonial from "../Testomonial/Testomonial";
 
 const Home = () => {
+  useTitle("Home");
   return (
     <div>
       <Banner></Banner>

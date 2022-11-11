@@ -1,7 +1,10 @@
 import React from "react";
+import picture0 from "../../../assets/images/team/1.jpg";
+import picture1 from "../../../assets/images/team/2.jpg";
+import picture2 from "../../../assets/images/team/3.jpg";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 const TeamCarousel = ({ team }) => {
-  const { picture, name, Team_id, about, prev, next } = team;
+  const { name, Team_id, about, prev, next } = team;
 
   return (
     <div
@@ -10,7 +13,7 @@ const TeamCarousel = ({ team }) => {
     >
       <div className="card w-96 bg-base-100 shadow-xl shadow  hover:shadow-indigo-500/40 ">
         <figure className="px-10 pt-10">
-          <img src={picture} alt="Accesories" className="rounded-xl" />
+          <img src={picture0} alt="Accesories" className="rounded-xl" />
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{name}</h2>
@@ -45,7 +48,7 @@ const TeamCarousel = ({ team }) => {
       </div>
       <div className="card w-96 bg-base-100 shadow-xl ">
         <figure className="px-10 pt-10">
-          <img src={picture} alt="Accesories" className="rounded-xl" />
+          <img src={picture1} alt="Accesories" className="rounded-xl" />
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{name}</h2>
@@ -80,7 +83,7 @@ const TeamCarousel = ({ team }) => {
       </div>
       <div className="card w-96 bg-base-100 shadow-xl ">
         <figure className="px-10 pt-10">
-          <img src={picture} alt="Accesories" className="rounded-xl" />
+          <img src={picture2} alt="Accesories" className="rounded-xl" />
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{name}</h2>

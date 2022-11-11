@@ -15,7 +15,7 @@ const Testomonial = () => {
           humour, or randomised words which don't look even slightly believable.
         </p>
       </div>
-      <div className="  carousel w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 mb-12">
+      <div className="  carousel w-full mb-12">
         <div
           id="slider1"
           className="carousel-item relative w-full rounded-box gap-4  flex content-center justify-center"
@@ -39,7 +39,7 @@ const Testomonial = () => {
                 <img src={image5} alt="" className="w-12 h-12" />
               </div>
             </div>
-            <div className=" items-center text-center">
+            <div className=" items-center mb-3">
               <p>
                 There are many variations of passages of Lorem Ipsum <br />{" "}
                 available, but the majority have suffered alteration in some{" "}
@@ -47,7 +47,7 @@ const Testomonial = () => {
                 <br /> look even slightly believable.
               </p>
             </div>
-            <div className=" items-center text-center">
+            <div className=" items-center ">
               <div>
                 <p>
                   <span className="icon text-orange-500 text-xl">★</span>
@@ -64,7 +64,7 @@ const Testomonial = () => {
               <div className="flex">
                 <div className="flex items-center">
                   <img
-                    src={image1}
+                    src={image2}
                     alt="Accesories"
                     className="rounded-full w-14 h-14"
                   />
@@ -82,7 +82,7 @@ const Testomonial = () => {
                 />
               </div>
             </div>
-            <div className=" items-center text-center">
+            <div className=" items-center mb-3">
               <p>
                 There are many variations of passages of Lorem Ipsum <br />{" "}
                 available, but the majority have suffered alteration in some{" "}
@@ -90,7 +90,7 @@ const Testomonial = () => {
                 <br /> look even slightly believable.
               </p>
             </div>
-            <div className=" items-center text-center">
+            <div className=" items-center ">
               <div>
                 <p>
                   <span className="icon text-orange-500 text-xl">★</span>
@@ -112,7 +112,7 @@ const Testomonial = () => {
             </a>
           </div>
         </div>
-        {/* <div
+        <div
           id="slider2"
           className="carousel-item relative w-full rounded-box gap-4  flex content-center justify-center"
         >
@@ -121,7 +121,7 @@ const Testomonial = () => {
               <div className="flex">
                 <div className="flex items-center">
                   <img
-                    src={image1}
+                    src={image3}
                     alt="Accesories"
                     className="rounded-full w-14 h-14"
                   />
@@ -135,7 +135,7 @@ const Testomonial = () => {
                 <img src={image5} alt="" className="w-12 h-12" />
               </div>
             </div>
-            <div className=" items-center text-center">
+            <div className=" items-center mb-3">
               <p>
                 There are many variations of passages of Lorem Ipsum <br />{" "}
                 available, but the majority have suffered alteration in some{" "}
@@ -143,7 +143,7 @@ const Testomonial = () => {
                 <br /> look even slightly believable.
               </p>
             </div>
-            <div className=" items-center text-center">
+            <div className=" items-center ">
               <div>
                 <p>
                   <span className="icon text-orange-500 text-xl">★</span>
@@ -160,7 +160,7 @@ const Testomonial = () => {
               <div className="flex">
                 <div className="flex items-center">
                   <img
-                    src={image1}
+                    src={image4}
                     alt="Accesories"
                     className="rounded-full w-14 h-14"
                   />
@@ -178,7 +178,7 @@ const Testomonial = () => {
                 />
               </div>
             </div>
-            <div className=" items-center text-center">
+            <div className=" items-center mb-3">
               <p>
                 There are many variations of passages of Lorem Ipsum <br />{" "}
                 available, but the majority have suffered alteration in some{" "}
@@ -186,7 +186,7 @@ const Testomonial = () => {
                 <br /> look even slightly believable.
               </p>
             </div>
-            <div className=" items-center text-center">
+            <div className=" items-center ">
               <div>
                 <p>
                   <span className="icon text-orange-500 text-xl">★</span>
@@ -207,7 +207,7 @@ const Testomonial = () => {
               ❯
             </a>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );

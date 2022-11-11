@@ -1,13 +1,53 @@
-import React from "react";
+import React, { useContext } from "react";
+import { FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.svg";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
   const menuItems = (
     <>
-      <li className="font-semibold">
+      <li className="font-semibold mr-2">
         <Link to="/">Home</Link>
       </li>
+      <li className="font-semibold mr-2">
+        <>
+          {user?.uid ? (
+            <>
+              <p>{user?.displayName}</p>
+              <button className="ms-2" variant="light" onClick={handleLogOut}>
+                Log Out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login">Login</Link>
+            </>
+          )}
+        </>
+      </li>
+      <>
+        <p>
+          {user?.photoURL ? (
+            <img
+              style={{ height: "40px" }}
+              className="rounded-full"
+              src={user.photoURL}
+            ></img>
+          ) : (
+            <>
+              <FaUserAlt></FaUserAlt>
+            </>
+          )}
+        </p>
+      </>
     </>
   );
   return (
@@ -44,6 +84,7 @@ const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
+
       <div className="navbar-end">
         <button className="btn btn-outline btn-warning">Appointment</button>
       </div>
