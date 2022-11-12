@@ -20,7 +20,7 @@ const Testomonial = () => {
           id="slider1"
           className="carousel-item relative w-full rounded-box gap-4  flex content-center justify-center"
         >
-          <div className="bg-base-100 shadow-xl  p-8 hover:shadow-indigo-500/40 rounded-lg ">
+          <div className="card bg-base-100 shadow-xl  p-8 hover:shadow-indigo-500/40 rounded-lg ">
             <div className="flex my-4 ">
               <div className="flex">
                 <div className="flex items-center">
