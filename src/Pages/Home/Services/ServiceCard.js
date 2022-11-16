@@ -2,8 +2,9 @@ import React from "react";
 import "./Services.css";
 
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const ServiceCard = ({ service }) => {
-  const { title, img, price } = service;
+  const { _id, title, img, price } = service;
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl mb-5 p-3 services">
       <figure>
@@ -20,9 +21,11 @@ const ServiceCard = ({ service }) => {
           </div>
 
           <div>
-            <button className="text-2xl text-orange-600 font-semibold">
-              <FaArrowRight></FaArrowRight>
-            </button>
+            <Link to={`/checkout/${_id}`}>
+              <button className="text-2xl text-orange-600 font-semibold">
+                <FaArrowRight></FaArrowRight>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
