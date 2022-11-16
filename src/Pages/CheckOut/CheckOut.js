@@ -23,6 +23,30 @@ const CheckOut = () => {
       phone,
       message,
     };
+    //for validation
+    if (phone.length > 10) {
+      alert("Phone number should be 11 or longer");
+    } else {
+    }
+
+    //fetching  data from server side mongodb
+    fetch("http://localhost:5000/orders", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          alert("Order placed successfully");
+          form.reset();
+        }
+
+        console.log(data);
+      })
+      .then((err) => console.error(err));
   };
 
   return (

@@ -22,8 +22,8 @@ const ServiceCard = ({ service }) => {
 
           <div>
             <Link to={`/checkout/${_id}`}>
-              <button className="text-2xl text-orange-600 font-semibold">
-                <FaArrowRight></FaArrowRight>
+              <button className="text-xl btn text-orange-600 font-semibold">
+                CheckOut <FaArrowRight></FaArrowRight>
               </button>
             </Link>
           </div>
