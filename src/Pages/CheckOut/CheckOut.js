@@ -19,14 +19,15 @@ const CheckOut = () => {
       service: _id,
       serviceName: title,
       price,
+      email,
       customer: name,
       phone,
       message,
     };
     //for validation
     if (phone.length > 10) {
-      alert("Phone number should be 11 or longer");
     } else {
+      alert("Phone number should be 11 or longer");
     }
 
     //fetching  data from server side mongodb

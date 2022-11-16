@@ -4,6 +4,7 @@ import TermsCondition from "../Others/Term&Condition/TermsCondition";
 import CheckOut from "../Pages/CheckOut/CheckOut";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
+import Orders from "../Pages/Orders/Orders";
 import SignUp from "../Pages/Signup/SignUp";
 import PrivateRoutes from "./PrivateRoutes";
 
@@ -38,6 +39,14 @@ const router = createBrowserRouter([
         element: <CheckOut></CheckOut>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/services/${params.id}`),
+      },
+      {
+        path: "/orders",
+        element: (
+          <PrivateRoutes>
+            <Orders></Orders>
+          </PrivateRoutes>
+        ),
       },
     ],
   },
