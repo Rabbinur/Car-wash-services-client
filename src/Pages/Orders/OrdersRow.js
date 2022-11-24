@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const OrdersRow = ({ order }) => {
+const OrdersRow = ({ order, handleDelete }) => {
   const { _id, serviceName, phone, price, customer, email, service } = order;
 
   //getting service all details
@@ -13,22 +13,6 @@ const OrdersRow = ({ order }) => {
       .then((data) => setOrderService(data));
   }, [service]);
 
-  //for delete with id
-  const handleDelete = (id) => {
-    const proceed = window.confirm(
-      "are you sure,you want  to cancel this order"
-    );
-
-    if (proceed) {
-      fetch(
-        `http://localhost:5000/orders/${id}`,
-
-        {
-          method: "DELETE",
-        }
-      );
-    }
-  };
   return (
     <tr>
       <th>
