@@ -37,6 +37,33 @@ const Orders = () => {
     }
   };
 
+  const handleStatusUpdate = (id) => {
+    fetch(`http://localhost:5000/orders/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ status: "Approved" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          //ekta status update
+          //remainig
+          const remaining = orders.filter((odr) => odr._id !== id);
+          //order theke approving find
+          const approving = orders.find((odr) => odr._id === id);
+          //setup status
+          approving.status = "Approved";
+
+          //set approved
+          const newOrders = [...remaining, approving];
+          setOrders(newOrders);
+        }
+      });
+  };
+
   return (
     <div>
       <h4>this is orders page</h4>
@@ -62,6 +89,7 @@ const Orders = () => {
                 key={order._id}
                 order={order}
                 handleDelete={handleDelete}
+                handleStatusUpdate={handleStatusUpdate}
               ></OrdersRow>
             ))}
           </tbody>
