@@ -45,6 +45,7 @@ const AuthProvider = ({ children }) => {
   };
   const logOut = () => {
     setLoading(true);
+    localStorage.removeItem("carwashToken");
     return signOut(auth);
   };
 

@@ -50,6 +50,28 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        // for jwt token
+
+        const currentUser = {
+          email: user.email,
+        };
+        console.log(currentUser);
+
+        //get jwt token
+
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            //local storage is the easiest not the best place to store jwt token
+            localStorage.setItem("carwashToken", data.token);
+          });
 
         setError(""); //successfully login hole error dekhabe nah clean kore felbeea
         // navigate(from, { replace: true });

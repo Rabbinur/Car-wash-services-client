@@ -4,16 +4,26 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import OrdersRow from "./OrdersRow";
 
 const Orders = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [orders, setOrders] = useState([]);
 
   //for data load
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders?email=${user?.email}`)
-      .then((res) => res.json())
+    fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+      //jwt
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("carwashToken")}`,
+      },
+    })
+      .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+          return logOut();
+        }
+        return res.json();
+      })
       .then((data) => setOrders(data));
-  }, [user?.email]); //user email change hole data pick krbe
+  }, [user?.email, logOut]); //user email change hole data pick krbe
 
   //for delete with id
   const handleDelete = (id) => {
@@ -24,6 +34,9 @@ const Orders = () => {
     if (proceed) {
       fetch(`http://localhost:5000/orders/${id}`, {
         method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("carwashToken")}`,
+        },
       })
         .then((res) => res.json())
         .then((data) => {
@@ -42,6 +55,7 @@ const Orders = () => {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("carwashToken")}`,
       },
       body: JSON.stringify({ status: "Approved" }),
     })
