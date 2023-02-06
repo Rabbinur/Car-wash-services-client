@@ -26,14 +26,14 @@ const Header = () => {
         </>
       ) : (
         <li className="font-semibold mr-2">
-          <Link to="/login">Login</Link>
+          {/* <Link to="/login">Login</Link> */}
         </li>
       )}
       <li className="font-semibold mr-2">
         <>
           {user?.uid ? (
             <>
-              <p>{user?.displayName}</p>
+              <p>{user?.displayName || user?.email}</p>
               <button className="ms-2" variant="light" onClick={handleLogOut}>
                 Log Out
               </button>
@@ -52,11 +52,10 @@ const Header = () => {
               style={{ height: "40px" }}
               className="rounded-full"
               src={user.photoURL}
+              alt=""
             ></img>
           ) : (
-            <>
-              <FaUserAlt></FaUserAlt>
-            </>
+            <>{/* <FaUserAlt></FaUserAlt> */}</>
           )}
         </p>
       </>

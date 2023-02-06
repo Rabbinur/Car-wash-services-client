@@ -22,7 +22,7 @@ const SignUp = () => {
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, email, password);
+    console.log(name, email, password, photoURL);
     createUser(email, password)
       .then((result) => {
         const user = result.user;

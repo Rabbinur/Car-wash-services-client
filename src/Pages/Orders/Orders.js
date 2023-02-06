@@ -10,7 +10,7 @@ const Orders = () => {
   //for data load
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+    fetch(`https://car-wash-server.vercel.app/orders?email=${user?.email}`, {
       //jwt
       headers: {
         authorization: `Bearer ${localStorage.getItem("carwashToken")}`,
@@ -32,7 +32,7 @@ const Orders = () => {
     );
 
     if (proceed) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://car-wash-server.vercel.app/orders/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `Bearer ${localStorage.getItem("carwashToken")}`,
@@ -51,7 +51,7 @@ const Orders = () => {
   };
 
   const handleStatusUpdate = (id) => {
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://car-wash-server.vercel.app/orders/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
